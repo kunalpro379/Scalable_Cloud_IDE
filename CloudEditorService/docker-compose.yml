@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  runner:
+    build:
+      context: ./Runner
+      dockerfile: Dockerfile
+    image: localhost:5000/cloud-editor-runner:latest
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+
+  orchestration:
+    build:
+      context: ./Orchestration
+      dockerfile: Dockerfile
+    image: localhost:5000/cloud-editor-orchestration:latest
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=development
+
+  initialization:
+    build:
+      context: ./Initialization
+      dockerfile: Dockerfile
+    image: localhost:5000/cloud-editor-initialization:latest
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+
+  registry:
+    image: registry:2
+    ports:
+      - "5000:5000"

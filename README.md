@@ -1,7 +1,8 @@
 ﻿# Scalable_Cloud_IDE
 
 
-
+The high-level system workflow is outlined below.
+```mermaid
 
 graph LR
     %% ========== Entry ========== 
@@ -39,7 +40,10 @@ graph LR
             MN1 --> DNS[kube-DNS<br/>ClusterIP 10.96.0.10]
         end
     end
+
+```
     
     %% ========== Localhost Ports ========== 
     S1 -.->|localhost:3000| P1
     S2 -.->|localhost:5482,8080| P2
+

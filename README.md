@@ -48,6 +48,5 @@ graph LR
     S2 -.->|localhost:5482,8080| P2
 
 ```
-![Architecture](./archetecture.png)
 
 
